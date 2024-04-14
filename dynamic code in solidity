@@ -1,0 +1,13 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract TransactionRecorder {
+    event TransactionRecord(address indexed from, address indexed to, uint256 amount, uint256 timestamp);
+
+    function recordTransaction(address _to, uint256 _amount) external {
+        // Perform the transaction logic here
+        
+        // Emit an event to record the transaction details
+        emit TransactionRecord(msg.sender, _to, _amount, block.timestamp);
+    }
+}
